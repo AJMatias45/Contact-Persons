@@ -1,3 +1,4 @@
+@extends('layouts.app')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,13 +10,12 @@
                     <th>Contact Number</th>
                     <th>Email Address</th>
                 </tr>
-                @foreach ($inquiries as $inquiry)
+                @foreach ($contacts as $contact)
                 <tr>
-                    <td>{{ $inquiry->id }}</td>
-                    <td>{{ $inquiry->CompleteName }}</td>
-                    <td>{{ $inquiry->ContactNumber }}</td>
-                    <td>{{ $inquiry->email }}</td>
-                    <td>{{ $inquiry->id }}</td>
+                    <td>{{ $contact->getID }}</td>
+                    <td>{{ $contact->setCompleteName() }}</td>
+                    <td>{{ $contact->setContactNumber }}</td>
+                    <td>{{ $contact->setEmail }}</td>
                 </tr>
                 @endforeach
             </table>
